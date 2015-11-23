@@ -59,7 +59,7 @@ port firebaseTasks =
             Task.spawn
               ( ElmFire.Op.operate elmfireConfig (ElmFire.Op.push pos)
                 -- remove again after some time
-                `andThen` \ref -> Task.sleep 1000
+                `andThen` \ref -> Task.sleep 2000
                 `andThen` \_ -> ElmFire.remove (ElmFire.location ref)
               )
             `andThen` \_ -> succeed ()
